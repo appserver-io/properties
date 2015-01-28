@@ -1,3 +1,13 @@
+# Version 0.2.0
+
+## Bugfixes
+
+* Added missing dependency to appserver-io/lang package
+
+## Features
+
+* Applied new file name and comment conventions
+
 # Version 0.1.2
 
 ## Bugfixes
