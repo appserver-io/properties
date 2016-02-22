@@ -33,7 +33,7 @@ use AppserverIo\Properties\PropertiesInterface;
  * @link      http://github.com/appserver-io/properties
  * @link      http://www.appserver.io
  */
-class PropertyStreamFilterParams extends \php_user_filter
+class PropertyStreamFilterParams
 {
 
     /**
