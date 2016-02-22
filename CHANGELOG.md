@@ -1,3 +1,13 @@
+# Version 1.1.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add new utility class providing some helper functionality to handle properties files
+
 # Version 1.0.0
 
 ## Bugfixes
