@@ -11,10 +11,8 @@
  *
  * PHP version 5
  *
- * @category  Library
- * @package   Properties
  * @author    Tim Wagner <tw@techdivision.com>
- * @copyright 2014 TechDivision GmbH <info@techdivision.com>
+ * @copyright 2015 TechDivision GmbH <info@techdivision.com>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      http://github.com/appserver-io/properties
  * @link      http://www.appserver.io
@@ -42,10 +40,8 @@ use AppserverIo\Collections\HashMap;
  * store or save method is called on a "compromised" Properties object
  * that contains a non-String key or value, the call will fail.
  *
- * @category  Library
- * @package   Properties
  * @author    Tim Wagner <tw@techdivision.com>
- * @copyright 2014 TechDivision GmbH <info@techdivision.com>
+ * @copyright 2015 TechDivision GmbH <info@techdivision.com>
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link      http://github.com/appserver-io/properties
  * @link      http://www.appserver.io
@@ -63,9 +59,7 @@ class Properties extends HashMap implements PropertiesInterface
     /**
      * The default constructor.
      *
-     * @param \AppserverIo\Properties\Properties $defaults The properties we want want to use for intialization
-     *
-     * @return void
+     * @param \AppserverIo\Properties\Properties $defaults The properties we want want to use for initialization
      */
     public function __construct(Properties $defaults = null)
     {
@@ -97,14 +91,14 @@ class Properties extends HashMap implements PropertiesInterface
      * @param boolean $sections Has to be TRUE to parse the sections
      *
      * @return \AppserverIo\Properties\Properties The initialized properties
-     * @throws \AppserverIo\Properties\PropertyFileParseException Is thrown if an error occurse while parsing the property file
+     * @throws \AppserverIo\Properties\PropertyFileParseException Is thrown if an error occurs while parsing the property file
      * @throws \AppserverIo\Properties\PropertyFileNotFoundException Is thrown if the property file passed as parameter does not exist in the include path
      */
     public function load($file, $sections = false)
     {
         // try to load the file content
         $content = @file_get_contents($file, FILE_USE_INCLUDE_PATH);
-        // check if file has succuessfully been loaded
+        // check if file has successfully been loaded
         if (! $content) {
             // throw an exception if the file can not be found in the include path
             throw new PropertyFileNotFoundException(sprintf('File %s not found in include path', $file));
@@ -237,7 +231,7 @@ class Properties extends HashMap implements PropertiesInterface
     /**
      * Returns all properties with their keys as a string.
      *
-     * @return string String with all key -> properies pairs
+     * @return string String with all key -> properties pairs
      */
     public function __toString()
     {
@@ -265,7 +259,7 @@ class Properties extends HashMap implements PropertiesInterface
     /**
      * Returns all properties with their keys as a String.
      *
-     * @return \AppserverIo\Lang\String String with all key -> properies pairs
+     * @return \AppserverIo\Lang\String String with all key -> properties pairs
      */
     public function toString()
     {
@@ -279,7 +273,7 @@ class Properties extends HashMap implements PropertiesInterface
      */
     public function getKeys()
     {
-        // check if the propery file is sectioned
+        // check if the property file is sectioned
         if ($this->sections) {
             // initialize the array for the keys
             $keys = array();

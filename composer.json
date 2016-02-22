@@ -6,11 +6,11 @@
 	"license" : "OSL-3.0",
 	"require" : {
 		"php" : ">=5.4.0",
-		"appserver-io/collections" : "0.1.*"
+		"appserver-io/collections" : "~1.0",
+        "appserver-io/lang" : "~1.0"
 	},
 	"require-dev" : {
-		"phpunit/phpunit" : "3.7.*",
-		"appserver-io/build" : "0.1.*"
+		"appserver-io/build" : "~1.0"
 	},
 	"autoload" : {
 		"psr-0" : {
@@ -18,11 +18,6 @@
 				"src/",
 				"tests/"
 			]
-		}
-	},
-	"config" : {
-		"github-oauth" : {
-			"github.com" : "604a3b5943228e434a5b52c2ba3cf72286d30db9"
 		}
 	},
 	"authors" : [{

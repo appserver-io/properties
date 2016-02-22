@@ -1,3 +1,33 @@
+# Version 1.1.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add new utility class providing some helper functionality to handle properties files
+
+# Version 1.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Switched to stable dependencies due to version 1.0.0 release
+
+# Version 0.2.0
+
+## Bugfixes
+
+* Added missing dependency to appserver-io/lang package
+
+## Features
+
+* Applied new file name and comment conventions
+
 # Version 0.1.2
 
 ## Bugfixes
