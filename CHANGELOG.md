@@ -1,3 +1,14 @@
+# Version 2.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Add third parameter scannerMode to Properties::load() method
+* Add PropertiesUtil::replaceProperties() method to replace the properties it the passed properties instance
+
 # Version 1.1.0
 
 ## Bugfixes
