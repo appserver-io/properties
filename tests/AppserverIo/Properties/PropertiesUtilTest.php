@@ -92,6 +92,7 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
         $properties = new Properties();
         $properties->setProperty('foo', '${bar}');
 
+
         // initialize the properties to be merged
         $propertiesToMerge = new Properties();
         $propertiesToMerge->setProperty('foo', 'bar');
