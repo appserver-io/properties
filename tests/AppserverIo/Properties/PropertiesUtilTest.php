@@ -34,6 +34,7 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test's the replaceProperties() method on a properties object containing a variable.
+     * Tests the replaceProperties() method on a properties object containing a variable.
      *
      * @return void
      */
@@ -91,7 +92,6 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
         // initialize the properties
         $properties = new Properties();
         $properties->setProperty('foo', '${bar}');
-
 
         // initialize the properties to be merged
         $propertiesToMerge = new Properties();
