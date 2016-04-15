@@ -33,12 +33,31 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
+     * Tests the replaceProperties() method on a properties object containing a variable.
+     *
+     * @return void
+     */
+    public function testReplaceProperties()
+    {
+
+        // initialize the properties
+        $properties = new Properties();
+        $properties->setProperty('foo', '${bar}');
+        $properties->setProperty('bar', 'foobar');
+
+        // load the utilities instance and replace the properties
+        PropertiesUtil::singleton()->replaceProperties($properties);
+
+        $this->assertSame('foobar', $properties->getProperty('foo'));
+    }
+
+    /**
      * This test tries to replace the variables in the passed
      * string with the values found in a properties file.
      *
      * @return void
      */
-    public function testLoadWithPropertyFileNotFoundException()
+    public function testReplacePropertiesInString()
     {
 
         // initialize the mock properties

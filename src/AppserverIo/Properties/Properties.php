@@ -23,6 +23,7 @@ namespace AppserverIo\Properties;
 use AppserverIo\Lang\String;
 use AppserverIo\Lang\NullPointerException;
 use AppserverIo\Collections\HashMap;
+use Metadata\MergeableClassMetadata;
 
 /**
  * The Properties class represents a persistent set of properties.
@@ -87,14 +88,16 @@ class Properties extends HashMap implements PropertiesInterface
     /**
      * Reads a property list (key and element pairs) from the passed file.
      *
-     * @param string  $file     The path and the name of the file to load the properties from
-     * @param boolean $sections Has to be TRUE to parse the sections
+     * @param string  $file        The path and the name of the file to load the properties from
+     * @param boolean $sections    Has to be TRUE to parse the sections
+     * @param integer $scannerMode Can either be INI_SCANNER_NORMAL (default) or INI_SCANNER_RAW, if INI_SCANNER_RAW is supplied, then option values will not be parsed.
      *
      * @return \AppserverIo\Properties\Properties The initialized properties
      * @throws \AppserverIo\Properties\PropertyFileParseException Is thrown if an error occurs while parsing the property file
      * @throws \AppserverIo\Properties\PropertyFileNotFoundException Is thrown if the property file passed as parameter does not exist in the include path
+     * @link http://php.net/parse_ini_string
      */
-    public function load($file, $sections = false)
+    public function load($file, $sections = false, $scannerMode = INI_SCANNER_RAW)
     {
         // try to load the file content
         $content = @file_get_contents($file, FILE_USE_INCLUDE_PATH);
@@ -104,7 +107,7 @@ class Properties extends HashMap implements PropertiesInterface
             throw new PropertyFileNotFoundException(sprintf('File %s not found in include path', $file));
         }
         // parse the file content
-        $properties = parse_ini_string($content, $this->sections = $sections);
+        $properties = parse_ini_string($content, $this->sections = $sections, $scannerMode);
         // check if property file was parsed successfully
         if ($properties == false) {
             // throw an exception if an error occurs
@@ -264,6 +267,25 @@ class Properties extends HashMap implements PropertiesInterface
     public function toString()
     {
         return new String($this->__toString());
+    }
+
+    /**
+     * Merges the passed properties into the actual instance. If override
+     * flag is set to TRUE, existing properties will be overwritten.
+     *
+     * @param \AppserverIo\Properties\PropertiesInterface $properties The properties to merge
+     * @param boolean                                     $override   TRUE if existing properties have to be overwritten, else FALSE
+     *
+     * @return void
+     */
+    public function merge(PropertiesInterface $properties, $override = false)
+    {
+        // iterate over the keys of the passed properties and add thm, or replace existing ones
+        foreach ($properties->getKeys() as $key => $value) {
+            if ($this->exists($key) === false || ($this->exists($key) === true && $override === true)) {
+                $this->setProperty($key, $value);
+            }
+        }
     }
 
     /**
