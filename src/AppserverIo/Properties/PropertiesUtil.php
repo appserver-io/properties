@@ -77,6 +77,22 @@ class PropertiesUtil
     }
 
     /**
+     * Replaces the variables declared in the properties with the
+     * properties value itself.
+     *
+     * @param \AppserverIo\Properties\PropertiesInterface $properties The properties with the variables/values to replace
+     * @param string                                      $pattern    The pattern that declares the variables (in valid sprintf format)
+     *
+     * @return void
+     */
+    public function replaceProperties(PropertiesInterface $properties, $pattern = PropertyStreamFilterParams::PATTERN)
+    {
+        foreach ($properties as $key => $value) {
+            $properties->setProperty($key, $this->replacePropertiesInString($properties, $value));
+        }
+    }
+
+    /**
      * Replaces the variables declared by the passed token with the
      * properties and returns the content.
      *
