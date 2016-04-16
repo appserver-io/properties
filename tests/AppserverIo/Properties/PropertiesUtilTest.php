@@ -58,7 +58,7 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testMergeWithSameKeyNotOverride()
+    public function testMergePropertiesWithSameKeyNotOverride()
     {
 
         // initialize the properties
@@ -72,7 +72,7 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
         $propertiesToMerge->setProperty('foobar', 'something');
 
         // merge the properties
-        $properties->merge($propertiesToMerge);
+        $properties->mergeProperties($propertiesToMerge);
 
         // assert that the results are as expected
         $this->assertSame('${bar}', $properties->getProperty('foo'));
@@ -86,7 +86,7 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testMergeWithSameKeyAndOverride()
+    public function testMergePropertiesWithSameKeyAndOverride()
     {
 
         // initialize the properties
@@ -98,7 +98,7 @@ class PropertiesUtilTest extends \PHPUnit_Framework_TestCase
         $propertiesToMerge->setProperty('foo', 'bar');
 
         // merge the properties
-        $properties->merge($propertiesToMerge, true);
+        $properties->mergeProperties($propertiesToMerge, true);
 
         // assert that the results are as expected
         $this->assertSame('bar', $properties->getProperty('foo'));
