@@ -20,7 +20,7 @@
 
 namespace AppserverIo\Properties;
 
-use AppserverIo\Lang\String;
+use AppserverIo\Lang\Strng;
 use AppserverIo\Lang\NullPointerException;
 use AppserverIo\Collections\HashMap;
 use Metadata\MergeableClassMetadata;
@@ -266,7 +266,7 @@ class Properties extends HashMap implements PropertiesInterface
      */
     public function toString()
     {
-        return new String($this->__toString());
+        return new Strng($this->__toString());
     }
 
     /**
