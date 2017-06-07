@@ -23,7 +23,6 @@ namespace AppserverIo\Properties;
 use AppserverIo\Lang\Strng;
 use AppserverIo\Lang\NullPointerException;
 use AppserverIo\Collections\HashMap;
-use Metadata\MergeableClassMetadata;
 
 /**
  * The Properties class represents a persistent set of properties.
