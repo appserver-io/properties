@@ -1,3 +1,24 @@
+# Version 3.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Refactoring to work with PHP 7
+* Switch to latest appserver-io/collections branch ~2.0
+
+# Version 2.1.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Switch to latest appserver-io/lang branch ~3.0
+
 # Version 2.0.0
 
 ## Bugfixes
