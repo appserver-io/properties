@@ -5,9 +5,8 @@
 	"homepage" : "https://github.com/appserver-io/properties",
 	"license" : "OSL-3.0",
 	"require" : {
-		"php" : ">=5.4.0",
-		"appserver-io/collections" : "~1.0",
-        "appserver-io/lang" : "~1.0"
+		"php" : ">=5.4.0 < 8.0",
+		"appserver-io/collections" : "~1.0"
 	},
 	"require-dev" : {
 		"appserver-io/build" : "~1.0"
