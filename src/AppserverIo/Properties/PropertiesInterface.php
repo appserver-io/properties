@@ -87,4 +87,15 @@ interface PropertiesInterface extends MapInterface
      * @return array The keys as array values
      */
     public function getKeys();
+
+    /**
+     * Merges the passed properties into the actual instance. If override
+     * flag is set to TRUE, existing properties will be overwritten.
+     *
+     * @param \AppserverIo\Properties\PropertiesInterface $properties The properties to merge
+     * @param boolean                                     $override   TRUE if existing properties have to be overwritten, else FALSE
+     *
+     * @return void
+     */
+    public function mergeProperties(PropertiesInterface $properties, $override = false);
 }
