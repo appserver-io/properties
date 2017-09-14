@@ -1,3 +1,13 @@
+# Version 2.1.1
+
+## Bugfixes
+
+* Rename Properties::method merge() to Properties::mergeProperties() to avoid incompatibilities with AbstractCollection::merge()
+
+## Features
+
+* Switch to latest appserver-io/lang branch ~3.0
+
 # Version 2.1.0
 
 ## Bugfixes

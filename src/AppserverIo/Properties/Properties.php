@@ -278,7 +278,7 @@ class Properties extends HashMap implements PropertiesInterface
      *
      * @return void
      */
-    public function merge(PropertiesInterface $properties, $override = false)
+    public function mergeProperties(PropertiesInterface $properties, $override = false)
     {
         // iterate over the keys of the passed properties and add thm, or replace existing ones
         foreach ($properties as $key => $value) {
